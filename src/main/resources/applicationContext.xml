@@ -21,11 +21,10 @@
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
-	<!-- 
 	<jdbc:embedded-database id="dataSource" type="H2">
-		<jdbc:script location="classpath:breweries.sql" />
+		<jdbc:script location="schema.sql" />
+		<jdbc:script location="data.sql" />
 	</jdbc:embedded-database>
-	 -->
 
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
