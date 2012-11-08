@@ -2,6 +2,7 @@ package org.springframework.data.samples._01_jpa.domain;
 
 import javax.persistence.*;
 
+@Entity
 public class City {
     @Id
     @Column(name = "city_id")
