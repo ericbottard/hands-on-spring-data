@@ -1,8 +1,6 @@
 package org.springframework.data.samples._01_jpa.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Country {
@@ -25,6 +23,7 @@ public class Country {
 
 	@Id
 	@Column(name="country_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
 	@Column(name="country")

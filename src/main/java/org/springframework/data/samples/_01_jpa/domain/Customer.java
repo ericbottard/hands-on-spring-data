@@ -1,15 +1,13 @@
 package org.springframework.data.samples._01_jpa.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Customer {
 	
 	@Id
 	@Column(name = "customer_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
 	@Column(name="first_name")
