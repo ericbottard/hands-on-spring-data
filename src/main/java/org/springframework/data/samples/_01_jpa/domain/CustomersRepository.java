@@ -1,7 +1,7 @@
 package org.springframework.data.samples._01_jpa.domain;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface CustomersRepository extends JpaRepository<Customer, Long> {
+public interface CustomersRepository extends PagingAndSortingRepository<Customer,Long> {
 
 }
