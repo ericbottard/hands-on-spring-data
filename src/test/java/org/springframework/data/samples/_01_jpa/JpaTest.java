@@ -1,9 +1,11 @@
-package org.springframework.data.samples._01_jpa.domain;
+package org.springframework.data.samples._01_jpa;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.samples._01_jpa.domain.Customer;
+import org.springframework.data.samples._01_jpa.domain.CustomersRepository;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
@@ -15,10 +17,10 @@ import static org.fest.assertions.api.Assertions.assertThat;
 import static org.fest.assertions.api.Assertions.extractProperty;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(value = "classpath:applicationContext.xml")
+@ContextConfiguration(value = "classpath:applicationContext-jpa.xml")
 @Transactional
 @TransactionConfiguration(defaultRollback = true)
-public class CustomersRepositoryTest {
+public class JpaTest {
 
     @Inject
     private CustomersRepository repository;
