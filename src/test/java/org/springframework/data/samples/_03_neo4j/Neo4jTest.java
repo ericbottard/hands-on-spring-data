@@ -1,28 +1,21 @@
 package org.springframework.data.samples._03_neo4j;
 
-import static org.fest.assertions.api.Assertions.assertThat;
-import static org.fest.assertions.api.Assertions.extractProperty;
-import static org.neo4j.cypherdsl.CypherQuery.lookup;
-import static org.neo4j.cypherdsl.CypherQuery.node;
-import static org.neo4j.cypherdsl.CypherQuery.start;
-
-import java.util.List;
-
-import javax.inject.Inject;
-
 import org.fest.assertions.core.Condition;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.neo4j.cypherdsl.grammar.Execute;
-import org.springframework.data.samples._03_neo4j.domain.Follows;
-import org.springframework.data.samples._03_neo4j.domain.Tweet;
-import org.springframework.data.samples._03_neo4j.domain.TweetsRepository;
-import org.springframework.data.samples._03_neo4j.domain.User;
-import org.springframework.data.samples._03_neo4j.domain.UsersRepository;
+import org.springframework.data.samples._03_neo4j.domain.*;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.inject.Inject;
+import java.util.List;
+
+import static org.fest.assertions.api.Assertions.assertThat;
+import static org.fest.assertions.api.Assertions.extractProperty;
+import static org.neo4j.cypherdsl.CypherQuery.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(value = "classpath:applicationContext-neo4j.xml")

@@ -1,9 +1,8 @@
 package org.springframework.data.samples._03_neo4j.domain;
 
-import org.springframework.data.neo4j.annotation.*;
-
-import java.util.HashSet;
-import java.util.Set;
+import org.springframework.data.neo4j.annotation.GraphId;
+import org.springframework.data.neo4j.annotation.Indexed;
+import org.springframework.data.neo4j.annotation.NodeEntity;
 
 /**
  * @author mh

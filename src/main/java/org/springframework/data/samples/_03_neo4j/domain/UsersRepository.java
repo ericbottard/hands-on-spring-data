@@ -1,10 +1,10 @@
 package org.springframework.data.samples._03_neo4j.domain;
 
-import java.util.List;
-
 import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.repository.GraphRepository;
 import org.springframework.data.neo4j.repository.RelationshipOperationsRepository;
+
+import java.util.List;
 
 public interface UsersRepository extends GraphRepository<User>,
 		RelationshipOperationsRepository<User> {

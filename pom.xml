@@ -96,7 +96,12 @@
 			<artifactId>spring-test</artifactId>
 			<version>3.1.0.RELEASE</version>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.0</version>
+        </dependency>
+    </dependencies>
 	<repositories>
 		<!-- For testing against latest Spring snapshots -->
 		<repository>
