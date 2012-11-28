@@ -17,6 +17,7 @@
 		<spring-data-mongodb.version>1.1.1.RELEASE</spring-data-mongodb.version>
 		<spring-data-neo4j.version>2.1.0.RELEASE</spring-data-neo4j.version>
 		<spring-data-rest.version>1.0.0.RELEASE</spring-data-rest.version>
+		<querydsl.version>2.9.0</querydsl.version>
 	</properties>
 
 	<dependencies>
@@ -77,7 +78,18 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<dependency>
+			<groupId>com.mysema.querydsl</groupId>
+			<artifactId>querydsl-apt</artifactId>
+			<version>${querydsl.version}</version>
+			<scope>provided</scope>
+		</dependency>
 
+		<dependency>
+			<groupId>com.mysema.querydsl</groupId>
+			<artifactId>querydsl-jpa</artifactId>
+			<version>${querydsl.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
@@ -134,6 +146,8 @@
 		</pluginRepository>
 	</pluginRepositories>
 	<build>
+		<defaultGoal>package</defaultGoal>
+
 		<plugins>
 			<plugin>
 				<groupId>com.mycila.maven-license-plugin</groupId>
@@ -165,7 +179,40 @@
 					<target>${java-version}</target>
 				</configuration>
 			</plugin>
-
+			<plugin>
+				<groupId>com.mysema.maven</groupId>
+				<artifactId>apt-maven-plugin</artifactId>
+				<version>1.0.6</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>process</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/generated-sources/java</outputDirectory>
+							<processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${project.build.directory}/generated-sources/java/</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
