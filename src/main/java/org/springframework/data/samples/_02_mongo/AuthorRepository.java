@@ -13,20 +13,15 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package org.springframework.data.samples._03_neo4j.domain;
+package org.springframework.data.samples._02_mongo;
 
-import org.springframework.data.neo4j.annotation.EndNode;
-import org.springframework.data.neo4j.annotation.GraphId;
-import org.springframework.data.neo4j.annotation.RelationshipEntity;
-import org.springframework.data.neo4j.annotation.StartNode;
+import org.springframework.data.mongodb.core.geo.Circle;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.samples._02_mongo.domain.Author;
 
-/**
- * @author mh
- * @since 26.07.12
- */
-@RelationshipEntity
-public class Follows {
-    @GraphId Long id;
-    @StartNode User follower;
-    @EndNode User user;
+import java.util.List;
+
+public interface AuthorRepository extends MongoRepository<Author, String> {
+
+    public List<Author> findByLocationWithinAndLastNameStartsWith(Circle circle, String lastNameBeginning);
 }
