@@ -60,6 +60,7 @@ public class MongoTest {
     //TODO: test with custom query
 
     @Test
+    //note: run first `db.authors.ensureIndex( { location : "2d" } );`
     public void should_find_authors_starting_with_Biv_string_around() {
         List<Author> authorsAround = authorRepository.findByLocationWithinAndLastNameStartsWith(new Circle(0, 0, 70), "Biv");
         assertThat(authorsAround).hasSize(1);

@@ -17,6 +17,8 @@ package org.springframework.data.samples._01_jpa.domain;
 
 import javax.persistence.*;
 
+import com.mysema.query.annotations.QueryInit;
+
 @Entity
 public class Customer {
 	
@@ -75,6 +77,8 @@ public class Customer {
 	private String email;
 	
 	@ManyToOne
+	@JoinColumn(name="address_id")
+	@QueryInit("*")
 	private Address address;
 	
 	

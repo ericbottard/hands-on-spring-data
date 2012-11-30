@@ -17,6 +17,8 @@ package org.springframework.data.samples._01_jpa.domain;
 
 import javax.persistence.*;
 
+import com.mysema.query.annotations.QueryInit;
+
 @Entity
 public class City {
     @Id
@@ -28,6 +30,8 @@ public class City {
     private String cityName;
 
     @ManyToOne
+    @JoinColumn(name="country_id")
+	@QueryInit("*")
     private Country country;
 
     public Long getId() {

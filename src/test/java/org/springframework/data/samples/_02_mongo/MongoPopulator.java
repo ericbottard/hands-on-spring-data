@@ -21,6 +21,7 @@ import org.springframework.data.mongodb.MongoDbFactory;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.geo.Point;
+import org.springframework.data.mongodb.core.index.GeospatialIndex;
 import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.data.samples._02_mongo.domain.Author;
 import org.springframework.data.samples._02_mongo.domain.Comment;
@@ -71,6 +72,7 @@ class MongoPopulator {
 
     private void generateAuthors() {
         template.insertAll(newArrayList(authors));
+        template.indexOps(Author.class).ensureIndex(new GeospatialIndex("location"));
     }
 
     private void generatePosts() throws IOException {
