@@ -15,9 +15,9 @@
 */
 package org.springframework.data.samples._01_jpa.domain;
 
-import javax.persistence.*;
-
 import com.mysema.query.annotations.QueryInit;
+
+import javax.persistence.*;
 
 @Entity
 public class City {

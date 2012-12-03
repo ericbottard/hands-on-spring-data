@@ -15,11 +15,8 @@
 */
 package org.springframework.data.samples._01_jpa;
 
-import static org.fest.assertions.api.Assertions.assertThat;
-import static org.fest.assertions.api.Assertions.extractProperty;
-
-import javax.inject.Inject;
-
+import com.mysema.query.types.Predicate;
+import com.mysema.query.types.expr.BooleanExpression;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.data.domain.PageRequest;
@@ -31,8 +28,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.mysema.query.types.Predicate;
-import com.mysema.query.types.expr.BooleanExpression;
+import javax.inject.Inject;
+
+import static org.fest.assertions.api.Assertions.assertThat;
+import static org.fest.assertions.api.Assertions.extractProperty;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(value = "classpath:applicationContext-jpa.xml")
@@ -45,22 +44,30 @@ public class JpaTest {
 
 	@Test
 	public void should_find_one_customer_by_id() {
+        // Find a customer by his/her ID
 		Customer customer = repository.findOne(42L);
+
+        // Check it matches the given email
 		assertThat(customer.getEmail()).isEqualTo(
 				"CAROLYN.PEREZ@sakilacustomer.org");
 	}
 
 	@Test
 	public void should_find_all_customers() {
+        // Find all customers
 		Iterable<Customer> customers = repository.findAll();
 		assertThat(customers).hasSize(599);
 	}
 
 	@Test
 	public void should_find_second_next_5_customers_sorted_by_last_name() {
-		Iterable<Customer> customers = repository.findAll(new PageRequest(1, 5,
-				Sort.Direction.DESC, "lastName"));
-		assertThat(extractProperty("lastName", String.class).from(customers))
+        // Retrieve the 5-sized 2nd page of customers, descendingly sorted by last name
+        PageRequest withPagination = new PageRequest(1, 5, Sort.Direction.DESC, "lastName");
+        Iterable<Customer> customers = repository.findAll(withPagination);
+
+        // Check their last names
+        Iterable<String> lastNames = extractProperty("lastName", String.class).from(customers);
+        assertThat(lastNames)
 				.containsOnly( //
 						"WREN", "WOODS", "WOOD", "WOFFORD", "WINDHAM" //
 				);
@@ -77,7 +84,6 @@ public class JpaTest {
 
 	@Test
 	public void using_querydsl_specifications() {
-
 		// Customers whose firstName starts with "Mar" (ignore case)
 		BooleanExpression customerFirstNamePredicate = QCustomer.customer.firstName
 				.startsWithIgnoreCase("Mar");
