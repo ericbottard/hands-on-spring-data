@@ -13,11 +13,12 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package org.springframework.data.samples._03_neo4j.domain;
+package org.springframework.data.samples._03_neo4j;
 
 import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.repository.GraphRepository;
 import org.springframework.data.neo4j.repository.RelationshipOperationsRepository;
+import org.springframework.data.samples._03_neo4j.domain.User;
 
 import java.util.List;
 
