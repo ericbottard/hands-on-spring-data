@@ -16,6 +16,6 @@
 
 	<neo4j:config storeDirectory="src/test/resources/twitter.db" />
 	
-	<neo4j:repositories base-package="org.springframework.data.samples._03_neo4j.domain" />
+	<neo4j:repositories base-package="org.springframework.data.samples._03_neo4j" />
 	
 </beans>
