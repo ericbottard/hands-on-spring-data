@@ -33,6 +33,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import static org.fest.assertions.api.Assertions.assertThat;
+import static org.fest.assertions.api.Assertions.extractProperty;
+import static org.springframework.data.samples._02_mongo.util.StringsEndsWithAnyOfCondition.eachEndsWithAnyOf;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext-mongo.xml")
@@ -49,30 +51,50 @@ public class MongoTest {
 
     @Before
     public void setup() throws IOException {
+        // populate! populate!
         populator.init();
     }
 
     @Test
-    public void should_find_rude_posts() {
-        assertThat(postRepository.findByContentsContains("Miami")).hasSize(50);
+    public void should_find_posts_containing_Miami() {
+        List<Post> postsContainingMiami = postRepository.findByContentsContains("Miami");
+        assertThat(postsContainingMiami).hasSize(50);
     }
 
-    //TODO: test with custom query
-
     @Test
-    //note: run first `db.authors.ensureIndex( { location : "2d" } );`
-    public void should_find_authors_starting_with_Biv_string_around() {
+    public void should_find_authors_starting_with_Biv_string_within_the_specified_circle() {
+
+        // combine predicates in magic finder, using geospatial utilities
         List<Author> authorsAround = authorRepository.findByLocationWithinAndLastNameStartsWith(new Circle(0, 0, 70), "Biv");
+
+        // only one should match ...
         assertThat(authorsAround).hasSize(1);
-        assertThat(authorsAround.iterator().next().getEmail()).isEqualTo("flo.b@flobi.org");
+        Author uniqueMatch = authorsAround.iterator().next();
+
+        // ... with the following email
+        assertThat(uniqueMatch.getEmail()).isEqualTo("flo.b@flobi.org");
     }
 
     @Test
     public void should_find_all_pictures_of_a_given_post() {
+
         Post post = whateverPostWillDo();
+
+        // find all pictures stored in GridFs of the specified post
         List<GridFsResource> pictures = postRepository.findPicturesByPost(post);
-        assertThat(pictures).hasSize(2);
-        //TODO: assert on filenames (contains blabla)
+
+        // extract filenames from the collection
+        Iterable<String> filenames = extractProperty("filename", String.class).from(pictures);
+
+        // check each of them ends with any of the specified filename ends
+        assertThat(filenames).hasSize(2)
+                .is(eachEndsWithAnyOf("super_kiki.jpg", "cloudfoundry.png"));
+    }
+
+    @After
+    public void tearDown() {
+        // destrrrroy everything!
+        populator.destroy();
     }
 
     private Post whateverPostWillDo() {
@@ -81,9 +103,4 @@ public class MongoTest {
         return iterator.next();
     }
 
-
-    @After
-    public void tearDown() {
-        populator.destroy();
-    }
 }

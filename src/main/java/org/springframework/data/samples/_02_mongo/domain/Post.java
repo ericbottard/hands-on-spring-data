@@ -15,6 +15,7 @@
 */
 package org.springframework.data.samples._02_mongo.domain;
 
+import com.google.common.base.Objects;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -22,6 +23,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Collection;
 import java.util.Date;
 
+import static com.google.common.base.Objects.equal;
 import static com.google.common.base.Objects.toStringHelper;
 import static com.google.common.collect.Lists.newLinkedList;
 import static java.util.Collections.unmodifiableCollection;
@@ -95,9 +97,26 @@ public class Post {
 
     @Override
     public String toString() {
-        return toStringHelper(this)                             //
-                .add("author", author)                          //
-                .add("contents", contents.substring(10) + "...")  //
+        return toStringHelper(this)                                 //
+                .add("author", author)                              //
+                .add("contents", contents.substring(10) + "...")    //
                 .toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Post post = (Post) o;
+
+        return equal(post.getAuthor(), getAuthor())                 //
+                && equal(post.getContents(), getContents())         //
+                && equal(post.getCreationDate(), getCreationDate());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getAuthor(), getContents(), getCreationDate());
     }
 }
