@@ -4,15 +4,13 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
-	<listener>
+<!--	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	<!-- 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>WEB-INF/applicationContext.xml</param-value>
-	</context-param>
-	 -->
+		<param-value>classpath:applicationContext-jpa.xml</param-value>
+	</context-param>-->
 
 	<!-- Ensure UTF-8 encoded pages so that certain characters are displayed 
 		and submitted correctly -->
@@ -43,6 +41,6 @@
 
 	<servlet-mapping>
 		<servlet-name>exporter</servlet-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 </web-app>
