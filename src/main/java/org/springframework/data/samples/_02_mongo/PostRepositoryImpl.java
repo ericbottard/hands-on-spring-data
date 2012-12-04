@@ -42,7 +42,7 @@ class PostRepositoryImpl implements CustomPictureRepository {
 
     @Override
     public List<GridFsResource> findPicturesByPost(Post post) {
-        List<GridFSDBFile> pictureFiles = fileTemplate.find(query(whereFilename().in(post.getPictures())));
-        return transform(pictureFiles, intoResources);
+        List<GridFSDBFile> dbFiles = fileTemplate.find(query(whereFilename().in(post.getPictures())));
+        return transform(dbFiles, intoResources);
     }
 }
