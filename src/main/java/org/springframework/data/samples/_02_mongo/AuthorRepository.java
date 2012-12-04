@@ -21,7 +21,6 @@ import org.springframework.data.samples._02_mongo.domain.Author;
 
 import java.util.List;
 
-public interface AuthorRepository extends MongoRepository<Author, String> {
+public interface AuthorRepository /* TODO */ {
 
-    public List<Author> findByLocationWithinAndLastNameStartsWith(Circle circle, String lastNameBeginning);
 }

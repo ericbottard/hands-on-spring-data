@@ -20,7 +20,7 @@ import org.springframework.data.samples._02_mongo.domain.Post;
 
 import java.util.List;
 
-public interface PostRepository extends MongoRepository<Post, String>, CustomPictureRepository {
+public interface PostRepository /* TODO */ {
 
-    public List<Post> findByContentsContains(String term);
+
 }

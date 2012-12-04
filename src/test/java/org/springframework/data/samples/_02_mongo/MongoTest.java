@@ -57,7 +57,8 @@ public class MongoTest {
 
     @Test
     public void should_find_posts_containing_Miami() {
-        List<Post> postsContainingMiami = postRepository.findByContentsContains("Miami");
+        List<Post> postsContainingMiami = null; //TODO
+
         assertThat(postsContainingMiami).hasSize(50);
     }
 
@@ -65,8 +66,8 @@ public class MongoTest {
     public void should_find_authors_starting_with_Biv_string_within_the_specified_circle() {
 
         // combine predicates in magic finder, using geospatial utilities
-        Circle where = new Circle(0, 0, 70);
-        List<Author> authorsAround = authorRepository.findByLocationWithinAndLastNameStartsWith(where, "Biv");
+        Circle where = null; // TODO
+        List<Author> authorsAround = null; // TODO
 
         // only one should match ...
         assertThat(authorsAround).hasSize(1);
@@ -82,7 +83,8 @@ public class MongoTest {
         Post post = whateverPostWillDo();
 
         // find all pictures stored in GridFs of the specified post
-        List<GridFsResource> pictures = postRepository.findPicturesByPost(post);
+        List<GridFsResource> pictures = null; // TODO
+
 
         // extract filenames from the collection
         Iterable<String> filenames = extractProperty("filename", String.class).from(pictures);

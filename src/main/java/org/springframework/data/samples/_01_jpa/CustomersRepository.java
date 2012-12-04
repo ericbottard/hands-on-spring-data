@@ -21,8 +21,11 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.samples._01_jpa.domain.Customer;
 
-public interface CustomersRepository extends PagingAndSortingRepository<Customer,Long>, QueryDslPredicateExecutor<Customer> {
+public interface CustomersRepository /* TODO */ {
 
-    @Query("select c from Customer c where length(c.firstName) = length(c.lastName) and length(c.firstName) = :l")
+    /**
+     * Find customers whose first and last names are of equal length, {@code l}.
+     */
+    // TODO: add query
     Iterable<Customer> findWithEqualLengthNames(@Param("l") int length);
 }

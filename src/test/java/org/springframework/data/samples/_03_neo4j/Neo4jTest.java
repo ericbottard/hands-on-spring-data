@@ -50,7 +50,7 @@ public class Neo4jTest {
 	public void magic_finder_using_a_propery() {
 
 		// Lookup a user given his/her name
-		User eric = userRepository.findByName("ebottard");
+		User eric = null; // TODO
 
 		assertThat(eric.getId()).isEqualTo(108);
 	}
@@ -71,15 +71,15 @@ public class Neo4jTest {
 	public void creating_relationships() {
 
 		// Lookup the user whose name is "andypiper"
-		User andy = userRepository.findByName("andypiper");
+		User andy = null; // TODO
 
 		// Find all the people he should be following
 		List<User> newFriends = userRepository.suggestFriends(andy.getName());
 
 		for (User u : newFriends) {
 			// Actually make him follow them
-			userRepository.createRelationshipBetween(andy, u, Follows.class,
-					"FOLLOWS");
+
+            // TODO
 		}
 
 		// Query the database again
@@ -97,7 +97,7 @@ public class Neo4jTest {
 	public void querying_with_dot_properties() {
 
 		// Find tweets given their sender name. Look for tweets sent by "ebottard"
-		List<Tweet> tweets = tweetsRepository.findBySenderName("ebottard");
+		List<Tweet> tweets = null; // TODO
 
 		
 		// Actually, there was only one, and it contains the word "japanese".
@@ -110,12 +110,10 @@ public class Neo4jTest {
 		// START devoxxTag=node:Tag(tag="devoxx")
 		// MATCH devoxxTag<-[:TAG]-tweet
 		// RETURN tweet
-		Execute query = start(lookup("devoxxTag", "Tag", "tag", "devoxx"))//
-				.match(node("devoxxTag").in("TAG").node("tweet"))//
-				.returns(node("tweet"));
+		Execute query = start(/*TODO*/);
 		
 		// Execute the query and return the results as List
-		List<Tweet> tweets = tweetsRepository.query(query, null).as(List.class);
+		List<Tweet> tweets = null; //TODO: tweetsRepository.query(query, null).as(List.class);
 		
 		// Verify that, of all the tweets returned, 3 contain the word "hoodie"
 		assertThat(extractProperty("text").ofType(String.class).from(tweets)).haveExactly(3, new Condition<String>() {

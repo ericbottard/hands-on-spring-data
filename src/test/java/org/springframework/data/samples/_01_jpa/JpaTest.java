@@ -44,8 +44,8 @@ public class JpaTest {
 
 	@Test
 	public void should_find_one_customer_by_id() {
-        // Find a customer by his/her ID
-		Customer customer = repository.findOne(42L);
+        // Find the customer with id 42
+		Customer customer = null; // TODO, using repository
 
         // Check it matches the given email
 		assertThat(customer.getEmail()).isEqualTo(
@@ -55,15 +55,16 @@ public class JpaTest {
 	@Test
 	public void should_find_all_customers() {
         // Find all customers
-		Iterable<Customer> customers = repository.findAll();
+		Iterable<Customer> customers = null; // TODO, using repository
 		assertThat(customers).hasSize(599);
 	}
 
 	@Test
 	public void should_find_second_next_5_customers_sorted_by_last_name() {
-        // Retrieve the 5-sized 2nd page of customers, descendingly sorted by last name
-        PageRequest withPagination = new PageRequest(1, 5, Sort.Direction.DESC, "lastName");
-        Iterable<Customer> customers = repository.findAll(withPagination);
+        // Retrieve the 5-sized 2nd page of customers, sorted by last name in descending order
+        PageRequest withPagination = null; // TODO
+
+        Iterable<Customer> customers = null; // TODO, using the PageRequest object created above
 
         // Check their last names
         Iterable<String> lastNames = extractProperty("lastName", String.class).from(customers);
@@ -75,7 +76,8 @@ public class JpaTest {
 
 	@Test
 	public void can_use_explicit_queries() {
-		Iterable<Customer> customers = repository.findWithEqualLengthNames(8);
+        // Find customers whose first and last names are both 8 chars long
+		Iterable<Customer> customers = repository.findWithEqualLengthNames(8); // TODO using an annotated method
 
 		assertThat(extractProperty("id", Long.class).from(customers))
 				.containsOnly(514L, 362L, 290L, 207L, 165L);
@@ -85,16 +87,13 @@ public class JpaTest {
 	@Test
 	public void using_querydsl_specifications() {
 		// Customers whose firstName starts with "Mar" (ignore case)
-		BooleanExpression customerFirstNamePredicate = QCustomer.customer.firstName
-				.startsWithIgnoreCase("Mar");
+		BooleanExpression customerFirstNamePredicate = null; // TODO
 
 		// Customers whose city address name is longer than 10 characters
-		Predicate cityNamePredicate = QCustomer.customer.address.city.cityName
-				.length().gt(10);
+		Predicate cityNamePredicate = null; // TODO
 
 		// Find customers that satisfy BOTH predicates
-		Iterable<Customer> customers = repository
-				.findAll(customerFirstNamePredicate.and(cityNamePredicate));
+		Iterable<Customer> customers = null; // TODO
 
 		assertThat(extractProperty("email", String.class).from(customers))
 				.containsOnly("MARSHALL.THORN@sakilacustomer.org",

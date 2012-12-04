@@ -21,8 +21,7 @@ import org.springframework.data.samples._03_neo4j.domain.Tweet;
 
 import java.util.List;
 
-public interface TweetsRepository extends GraphRepository<Tweet>, CypherDslRepository<Tweet> {
+public interface TweetsRepository /* TODO */ {
 	
-	List<Tweet> findBySenderName(String username);
 
 }
