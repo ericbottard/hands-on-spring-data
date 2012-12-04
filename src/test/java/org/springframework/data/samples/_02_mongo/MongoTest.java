@@ -65,7 +65,8 @@ public class MongoTest {
     public void should_find_authors_starting_with_Biv_string_within_the_specified_circle() {
 
         // combine predicates in magic finder, using geospatial utilities
-        List<Author> authorsAround = authorRepository.findByLocationWithinAndLastNameStartsWith(new Circle(0, 0, 70), "Biv");
+        Circle where = new Circle(0, 0, 70);
+        List<Author> authorsAround = authorRepository.findByLocationWithinAndLastNameStartsWith(where, "Biv");
 
         // only one should match ...
         assertThat(authorsAround).hasSize(1);
