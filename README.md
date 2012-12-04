@@ -6,7 +6,7 @@
  * [Maven](http://maven.apache.org/download.html)
  * [Mongo DB](http://www.mongodb.org/downloads)
 
-## Exercise 1: JPA (between 5 and 30 min)
+## Exercise 1: JPA
 
 Basically, the application stores customer locations.
 The domain is modeled as follows:
