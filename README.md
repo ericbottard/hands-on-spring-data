@@ -62,3 +62,11 @@ Open `Neo4JTest`and go green!
    1. Make Andy Piper follow his account suggestions, based on your previous query.
    1. Find tweets by sender name.
    1. Find all tweets tagging Devoxx, using Cypher Java DSL.
+
+
+
+## Bonus: Spring Data REST
+
+   1. Run `mvn tomcat:run`
+   1. Open/curl 'localhost:8080/hands-on-springdata'
+   1. Explore :)
