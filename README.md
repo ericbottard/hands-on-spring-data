@@ -35,7 +35,7 @@ as illustrated here:
 
 ### TODO
 
-Again, the data set and the setup are taken care for you.
+Again, the data set and the setup are taken care of for you.
 Similarly, please fix the failing tests of `MongoTest`.
 
    1. Find blog posts by their contents
