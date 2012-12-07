@@ -21,7 +21,7 @@ Please complete class `JpaTest`. This test suite relies on an embedded H2 databa
 
    1. Find a customer by its ID (lookup user with id 42)
    1. Find all customers
-   1. Get paginated customer results 
+   1. Get paginated customer results (2nd page, 5 people per page) 
    1. Find customers with name compound predicate using explicit queries
    1. Find by name and city, using QueryDSL
 
@@ -38,8 +38,8 @@ as illustrated here:
 Again, the data set and the setup are taken care of for you.
 Similarly, please fix the failing tests of `MongoTest`.
 
-   1. Find blog posts by their contents
-   1. Find authors within a radius of 70 (center: [0,0]).
+   1. Find blog posts by their contents ("Miami")
+   1. Find authors within a radius of 70 (center: [0,0])
    1. Find all pictures of a post, via a custom repository implementation
 
 
@@ -58,11 +58,11 @@ The model is defined as follows:
 
 Open `Neo4JTest`and go green!
 
-   1. Find a user (@ebottard) by name.
-   1. Retrieve Chris Richardson (@crichardson) account suggestions, using an explicit Cypher query.
-   1. Make Andy Piper (@andypiper) follow his account suggestions, based on your previous query.
+   1. Find a user (@ebottard) by name
+   1. Retrieve Chris Richardson (@crichardson) account suggestions, using an explicit Cypher query
+   1. Make Andy Piper (@andypiper) follow his account suggestions, based on your previous query
    1. Craft a query that will allow you to find tweets by sender name, and use it to retrieve @ebottard's tweets
-   1. Find all tweets tagged with #devoxx, using Cypher Java DSL.
+   1. Find all tweets tagged with #devoxx, using Cypher Java DSL
 
 
 
