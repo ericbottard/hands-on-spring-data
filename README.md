@@ -19,9 +19,9 @@ The domain is modeled as follows:
 The required setup and data set are already provided.
 Please complete class `JpaTest`. This test suite relies on an embedded H2 database.
 
-   1. Find a customer by its ID
+   1. Find a customer by its ID (lookup user with id 42)
    1. Find all customers
-   1. Get paginated customer results
+   1. Get paginated customer results 
    1. Find customers with name compound predicate using explicit queries
    1. Find by name and city, using QueryDSL
 
@@ -45,10 +45,11 @@ Similarly, please fix the failing tests of `MongoTest`.
 
 ## Exercise 3: Neo4J
 
-(Derived from [Michael Hunger work](https://github.com/jexp/sdn-twitter-graph).)
+(Derived from [Michael Hunger's work](https://github.com/jexp/sdn-twitter-graph).)
 
 Everyone knows about Twitter. Rumor has it Twitter has moved to Neo4J! 
-Their model is defined as follows:
+We used Michael's application to query for some tweets about #cloudfoundry (http://www.cloudfoundry.com) and saved the results. The dataset is provided for you.
+The model is defined as follows:
 
 ![Tweets Data Model](https://raw.github.com/ericbottard/hands-on-spring-data/master/src/etc/doc/diagram-tweets.png)
 
@@ -57,11 +58,11 @@ Their model is defined as follows:
 
 Open `Neo4JTest`and go green!
 
-   1. Find a user by name.
-   1. Retrieve Chris Richardson account suggestions, using an explicit Cypher query.
-   1. Make Andy Piper follow his account suggestions, based on your previous query.
-   1. Find tweets by sender name.
-   1. Find all tweets tagging Devoxx, using Cypher Java DSL.
+   1. Find a user (@ebottard) by name.
+   1. Retrieve Chris Richardson (@crichardson) account suggestions, using an explicit Cypher query.
+   1. Make Andy Piper (@andypiper) follow his account suggestions, based on your previous query.
+   1. Craft a query that will allow you to find tweets by sender name, and use it to retrieve @ebottard's tweets
+   1. Find all tweets tagged with #devoxx, using Cypher Java DSL.
 
 
 
