@@ -29,7 +29,18 @@ public class Customer {
 	
 	@Column(name="first_name")
 	private String firstName;
-	
+
+	@Column(name="last_name")
+	private String lastName;
+
+	@Column(name="email")
+	private String email;
+
+	@ManyToOne
+	@JoinColumn(name="address_id")
+	@QueryInit("*")
+	private Address address;
+
 	public Long getId() {
 		return id;
 	}
@@ -69,18 +80,5 @@ public class Customer {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
-
-	@Column(name="last_name")
-	private String lastName;
-
-	@Column(name="email")
-	private String email;
-	
-	@ManyToOne
-	@JoinColumn(name="address_id")
-	@QueryInit("*")
-	private Address address;
-	
-	
 
 }

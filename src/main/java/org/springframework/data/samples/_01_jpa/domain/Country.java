@@ -19,7 +19,15 @@ import javax.persistence.*;
 
 @Entity
 public class Country {
-	
+
+	@Id
+	@Column(name="country_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+
+	@Column(name="country")
+	private String name;
+
 	public Long getId() {
 		return id;
 	}
@@ -35,13 +43,5 @@ public class Country {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	@Id
-	@Column(name="country_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	
-	@Column(name="country")
-	private String name;
 
 }

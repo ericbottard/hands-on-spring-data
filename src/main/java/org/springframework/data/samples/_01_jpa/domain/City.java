@@ -21,6 +21,7 @@ import javax.persistence.*;
 
 @Entity
 public class City {
+
     @Id
     @Column(name = "city_id")
     @GeneratedValue(strategy = GenerationType.AUTO)

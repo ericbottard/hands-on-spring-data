@@ -30,12 +30,17 @@ public class Address {
     @JoinColumn(name="city_id")
 	@QueryInit("*")
     private City city;
+
     private String district;
+
     @Column(name = "postal_code")
     private String postalCode;
+
     private String address;
+
     @Column(name = "address2")
     private String addressExtension;
+
     private String phone;
 
     public Long getId() {
