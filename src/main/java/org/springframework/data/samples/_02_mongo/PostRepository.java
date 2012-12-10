@@ -15,6 +15,7 @@
 */
 package org.springframework.data.samples._02_mongo;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.samples._02_mongo.domain.Post;
 
@@ -22,5 +23,6 @@ import java.util.List;
 
 public interface PostRepository /* TODO */ {
 
-
+    // only here for MongoTest compilation, remove me ;)
+    List<Post> findAll(Sort pagination);
 }
