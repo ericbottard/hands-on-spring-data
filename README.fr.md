@@ -21,7 +21,7 @@ Il ne vous reste qu'à compléter les tests de la classe `JpaTest`. Celle-ci s'a
 
    1. Trouver un client par son ID (ID 42)
    1. Récupérer tous les clients
-   1. Obtenir une liste paginée de clients (2nde page, 5 clients par page) 
+   1. Obtenir une liste paginée de clients (2nde page [les pages sont indexées à partir de 0], 5 clients par page)
    1. Obtenir les clients dont le nom suit un prédicat, défini via des "explicit queries"
    1. Trouver des clients par nom et par ville, en s'appuyant sur QueryDSL
 
@@ -39,9 +39,12 @@ Ici encore, la configuration de l'application et le jeu de données vous sont fo
 Complétez la classe de test `MongoTest`.
 
    1. Trouver des posts dont le texte contient une séquence (ici: "Miami")
-   1. Trouver tous les auteurs dans un rayon de 70 (cercle centré sur l'origine : [0,0])
+   1. Trouver tous les auteurs dans un rayon de 70 (cercle centré sur l'origine : [0,0]) dont le nom de famille commence par "Biv"
    1. Trouver toutes les images d'un post, via une implémentation de repository spécifique
+   en utilisant la classe `GridFsTemplate` et les méthodes statitques `org.springframework.data.mongodb.core.query.Query.query` et
+   `org.springframework.data.mongodb.gridfs.GridFsCriteria.whereFilename`
 
+TODO CUSTOM IMPL CLASS DIAGRAM
 
 ## Exercice 3: Neo4J
 
@@ -59,10 +62,10 @@ Le domaine métier s'articule comme suit :
 
 Modifiez la classe `Neo4JTest` et faites passer les tests au vert !
 
-   1. Trouver un utilisateur par son nom (ici : @ebottard)
-   1. Retrouver les suggestions de comptes à suivre pour un utilisateur (ici : Chris Richardson (@crichardson)), en utilisant une requête Cypher
-   1. Faire suivre ces suggestions à un compte utilisateur (ici : Andy Piper (@andypiper)), en se basant sur la requête précédente
-   1. Rédiger la requête permettant de retrouver des tweets par le nom de leur auteur, afin de récupérer les tweets d'un utilisateur (ici : @ebottard)
+   1. Trouver un utilisateur par son nom (ici : @ebottard, càd "ebottard")
+   1. Retrouver les suggestions de comptes à suivre pour un utilisateur (ici : Chris Richardson (@crichardson, càd "crichardson")), en utilisant une requête Cypher
+   1. Faire suivre ces suggestions à un compte utilisateur (ici : Andy Piper (@andypiper, càd "andypiper")), en se basant sur la requête précédente
+   1. Rédiger la requête permettant de retrouver des tweets par le nom de leur auteur, afin de récupérer les tweets d'un utilisateur (ici : @ebottard, càd "ebottard")
    1. Trouvez tous les tweets mentionnant un tag (ici : #devoxx), en utilisant le DSL Java de Cypher
 
 
@@ -70,5 +73,5 @@ Modifiez la classe `Neo4JTest` et faites passer les tests au vert !
 ## Bonus: Spring Data REST
 
    1. Exécuter `mvn tomcat:run`
-   1. Ouvrir/curl 'localhost:8080/hands-on-springdata'
+   1. Ouvrir/curl/utiliser Spring Shell sur 'localhost:8080/hands-on-springdata'
    1. Explorer :)

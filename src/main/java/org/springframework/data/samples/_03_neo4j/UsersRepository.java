@@ -16,8 +16,6 @@
 package org.springframework.data.samples._03_neo4j;
 
 import org.springframework.data.neo4j.annotation.Query;
-import org.springframework.data.neo4j.repository.GraphRepository;
-import org.springframework.data.neo4j.repository.RelationshipOperationsRepository;
 import org.springframework.data.samples._03_neo4j.domain.User;
 
 import java.util.List;
@@ -34,8 +32,7 @@ public interface UsersRepository /* TODO */ {
 	 *            the user for which we're trying to suggest new friends
 	 * @return a list of User entities that the user should follow
 	 */
-	List<User> suggestFriends(String username);
-
-
+   @Query("START u=node:User(name={0}) RETURN u") // CHANGEME
+   List<User> suggestFriends(String username);
 	
 }

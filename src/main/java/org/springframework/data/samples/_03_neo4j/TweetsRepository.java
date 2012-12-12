@@ -15,13 +15,4 @@
 */
 package org.springframework.data.samples._03_neo4j;
 
-import org.springframework.data.neo4j.repository.CypherDslRepository;
-import org.springframework.data.neo4j.repository.GraphRepository;
-import org.springframework.data.samples._03_neo4j.domain.Tweet;
-
-import java.util.List;
-
-public interface TweetsRepository /* TODO */ {
-	
-
-}
+public interface TweetsRepository /* TODO */ {}

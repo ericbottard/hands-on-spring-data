@@ -47,7 +47,7 @@ public class Neo4jTest {
 	private UsersRepository userRepository;
 
 	@Test
-	public void magic_finder_using_a_propery() {
+	public void magic_finder_using_a_property() {
 
 		// Lookup a user given his/her name
 		User eric = null; // TODO

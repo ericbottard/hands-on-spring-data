@@ -16,16 +16,16 @@
 package org.springframework.data.samples._01_jpa;
 
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.querydsl.QueryDslPredicateExecutor;
-import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.samples._01_jpa.domain.Customer;
+
+import java.util.List;
 
 public interface CustomersRepository /* TODO */ {
 
     /**
      * Find customers whose first and last names are of equal length, {@code l}.
      */
-    // TODO: add query
+    @Query("SELECT c FROM Customer c WHERE :l = :l") //CHANGEME
     Iterable<Customer> findWithEqualLengthNames(@Param("l") int length);
 }

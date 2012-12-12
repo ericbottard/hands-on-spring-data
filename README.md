@@ -21,7 +21,7 @@ Please complete class `JpaTest`. This test suite relies on an embedded H2 databa
 
    1. Find a customer by its ID (lookup user with id 42)
    1. Find all customers
-   1. Get paginated customer results (2nd page, 5 people per page) 
+   1. Get paginated customer results (2nd page [page indices are 0-based], 5 people per page)
    1. Find customers with name compound predicate using explicit queries
    1. Find by name and city, using QueryDSL
 
@@ -39,9 +39,12 @@ Again, the data set and the setup are taken care of for you.
 Similarly, please fix the failing tests of `MongoTest`.
 
    1. Find blog posts by their contents ("Miami")
-   1. Find authors within a radius of 70 (center: [0,0])
-   1. Find all pictures of a post, via a custom repository implementation
+   1. Find authors within a radius of 70 (center: [0,0]) whose last name starts with "Biv"
+   1. Find all pictures of a post, via a custom repository implementation,
+   using `GridFsTemplate` class and static methods `org.springframework.data.mongodb.core.query.Query.query` and
+   `org.springframework.data.mongodb.gridfs.GridFsCriteria.whereFilename`
 
+TODO CUSTOM IMPL CLASS DIAGRAM
 
 ## Exercise 3: Neo4J
 
@@ -58,9 +61,10 @@ The model is defined as follows:
 
 Open `Neo4JTest`and go green!
 
-   1. Find a user (@ebottard) by name
-   1. Retrieve Chris Richardson (@crichardson) account suggestions, using an explicit Cypher query
-   1. Make Andy Piper (@andypiper) follow his account suggestions, based on your previous query
+   1. Find a user (@ebottard i.e. "ebottard") by name
+   1. Retrieve Chris Richardson (@crichardson i.e. "crichardson") account suggestions, using an explicit Cypher query
+   (see Javadoc in `Neo4JTest` for complete specs about that)
+   1. Make Andy Piper (@andypiper i.e. "andypiper") follow his account suggestions, based on your previous query
    1. Craft a query that will allow you to find tweets by sender name, and use it to retrieve @ebottard's tweets
    1. Find all tweets tagged with #devoxx, using Cypher Java DSL
 
@@ -69,5 +73,5 @@ Open `Neo4JTest`and go green!
 ## Bonus: Spring Data REST
 
    1. Run `mvn tomcat:run`
-   1. Open/curl 'localhost:8080/hands-on-springdata'
+   1. Open/curl/use Spring Shell to 'localhost:8080/hands-on-springdata'
    1. Explore :)
