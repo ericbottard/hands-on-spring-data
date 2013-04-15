@@ -54,6 +54,17 @@ public class Neo4jTest {
 		assertThat(eric.getId()).isEqualTo(108);
 	}
 
+    @Test
+    public void querying_with_dot_properties() {
+
+        // Find tweets given their sender name. Look for tweets sent by "ebottard"
+        List<Tweet> tweets = null; // TODO
+
+
+        // Actually, there was only one, and it contains the word "japanese".
+        assertThat(tweets.get(0).getText()).containsIgnoringCase("japanese");
+    }
+
 	@Test
 	public void writing_a_cypher_query() {
 
@@ -65,8 +76,7 @@ public class Neo4jTest {
 				);
 
 	}
-
-	@Test
+    @Test
 	public void creating_relationships() {
 
 		// Lookup the user whose name is "andypiper"
@@ -92,16 +102,6 @@ public class Neo4jTest {
 
 	}
 
-	@Test
-	public void querying_with_dot_properties() {
-
-		// Find tweets given their sender name. Look for tweets sent by "ebottard"
-		List<Tweet> tweets = null; // TODO
-
-		
-		// Actually, there was only one, and it contains the word "japanese".
-		assertThat(tweets.get(0).getText()).containsIgnoringCase("japanese");
-	}
 
 	@Test
 	public void using_cypher_dsl() {

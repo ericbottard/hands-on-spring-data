@@ -68,10 +68,10 @@ The model is defined as follows:
 Open `Neo4JTest`and go green!
 
    1. Find a user (@ebottard i.e. "ebottard") by name
+   1. Craft a query that will allow you to find tweets by sender name, and use it to retrieve @ebottard's tweets
    1. Retrieve Chris Richardson (@crichardson i.e. "crichardson") account suggestions, using an explicit Cypher query
    (see Javadoc in `Neo4JTest` for complete specs about that)
    1. Make Andy Piper (@andypiper i.e. "andypiper") follow his account suggestions, based on your previous query
-   1. Craft a query that will allow you to find tweets by sender name, and use it to retrieve @ebottard's tweets
    1. Find all tweets tagged with #devoxx, using Cypher Java DSL
 
 

@@ -70,9 +70,9 @@ Le domaine métier s'articule comme suit :
 Modifiez la classe `Neo4JTest` et faites passer les tests au vert !
 
    1. Trouver un utilisateur par son nom (ici : @ebottard, càd "ebottard")
+   1. Rédiger la requête permettant de retrouver des tweets par le nom de leur auteur, afin de récupérer les tweets d'un utilisateur (ici : @ebottard, càd "ebottard")
    1. Retrouver les suggestions de comptes à suivre pour un utilisateur (ici : Chris Richardson (@crichardson, càd "crichardson")), en utilisant une requête Cypher
    1. Faire suivre ces suggestions à un compte utilisateur (ici : Andy Piper (@andypiper, càd "andypiper")), en se basant sur la requête précédente
-   1. Rédiger la requête permettant de retrouver des tweets par le nom de leur auteur, afin de récupérer les tweets d'un utilisateur (ici : @ebottard, càd "ebottard")
    1. Trouvez tous les tweets mentionnant un tag (ici : #devoxx), en utilisant le DSL Java de Cypher
 
 
