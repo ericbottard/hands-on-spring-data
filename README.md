@@ -5,7 +5,11 @@
  * [JDK 6+](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
  * [Maven](http://maven.apache.org/download.html)
  * [Mongo DB](http://www.mongodb.org/downloads)
-
+ 
+ This Hands On has been tested with Eclipse, but any other IDE should work. We recommend using the [SpringSource ToolSuite](http://www.springsource.org/sts) distro, which has Maven support and SpringData awareness built-in. You should import the project as an "Existing Maven project". 
+ 
+ The main gotcha is having [QueryDSL](http://www.querydsl.com/) work in your IDE. Configuration files for eclipse are included, for other IDEs, your mileage may vary.
+ 
 ## Exercise 1: JPA
 
 Basically, the application stores customer locations.
