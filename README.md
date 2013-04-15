@@ -50,9 +50,7 @@ Similarly, please fix the failing tests of `MongoTest`.
 
    1. Find blog posts by their contents ("Miami")
    1. Find authors within a radius of 70 (center: [0,0]) whose last name starts with "Biv"
-   1. Find all pictures of a post, via a custom repository implementation,
-   using `GridFsTemplate` class and static methods `org.springframework.data.mongodb.core.query.Query.query` and
-   `org.springframework.data.mongodb.gridfs.GridFsCriteria.whereFilename`
+   1. Find all pictures of a post, via custom repository implementation `PostRepositoryImpl`. Your implementation will rely on `GridFsTemplate` to execute an instance of `org.springframework.data.mongodb.core.query.Query`. You can construct one out of criteria objects (e.g.: `org.springframework.data.mongodb.gridfs.GridFsCriteria.whereFilename` belonging in post.getPictures()`).
 
 ## Exercise 3: Neo4J
 

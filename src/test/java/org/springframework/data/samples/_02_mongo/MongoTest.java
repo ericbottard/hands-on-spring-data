@@ -66,7 +66,8 @@ public class MongoTest {
     public void should_find_authors_starting_with_Biv_string_within_the_specified_circle() {
 
         // combine predicates in magic finder, using geospatial utilities
-        Circle where = null; // TODO
+        // radius: 70, center: [0,0]
+        Circle circle = null; // TODO
         List<Author> authorsAround = null; // TODO
 
         // only one should match ...
@@ -83,7 +84,8 @@ public class MongoTest {
         Post post = whateverPostWillDo();
 
         // find all pictures stored in GridFs of the specified post
-        List<GridFsResource> pictures = null; // TODO
+        // TODO: adapt PostRepositoryImpl
+        List<GridFsResource> pictures = postRepository.findImagesByPost(post);
 
 
         // extract filenames from the collection

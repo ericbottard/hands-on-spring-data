@@ -50,11 +50,8 @@ Complétez la classe de test `MongoTest`.
 
    1. Trouver des posts dont le texte contient une séquence (ici: "Miami")
    1. Trouver tous les auteurs dans un rayon de 70 (cercle centré sur l'origine : [0,0]) dont le nom de famille commence par "Biv"
-   1. Trouver toutes les images d'un post, via une implémentation de repository spécifique
-   en utilisant la classe `GridFsTemplate` et les méthodes statitques `org.springframework.data.mongodb.core.query.Query.query` et
-   `org.springframework.data.mongodb.gridfs.GridFsCriteria.whereFilename`
+   1. Trouver toutes les images d'un post, via le repository custom `PostRepositoryImpl`. Votre implémentation se basera sur `GridFsTemplate`, lequel exécutera une instance de `org.springframework.data.mongodb.core.query.Query`. Vous pouvez la construire avec des objets _criteria_ (ex: `org.springframework.data.mongodb.gridfs.GridFsCriteria.whereFilename` appartient à `post.getPictures()`).
 
-TODO CUSTOM IMPL CLASS DIAGRAM
 
 ## Exercice 3: Neo4J
 
