@@ -78,7 +78,7 @@ Open `Neo4JTest`and go green!
    1. Retrieve Chris Richardson (@crichardson i.e. "crichardson") account suggestions, using an explicit Cypher query
    (see Javadoc in `Neo4JTest` for complete specs about that)
    1. Make Andy Piper (@andypiper i.e. "andypiper") follow his account suggestions, based on your previous query
-   1. Find all tweets tagged with #devoxx, using Cypher Java DSL
+   1. Find all tweets tagged with #devoxx, using Cypher [Java DSL](https://github.com/neo4j/cypher-dsl)
 
 
 
