@@ -18,6 +18,8 @@ The main gotcha is having [QueryDSL](http://www.querydsl.com/) work in your IDE.
 
 ## Exercise 1: JPA
 
+[Spring Data/JPA reference](http://static.springsource.org/spring-data/data-jpa/docs/1.2.0.RELEASE/reference/html/)
+
 Basically, the application stores customer locations.
 The domain is modeled as follows:
 
@@ -37,6 +39,8 @@ Please complete classes `JpaTest` and `CustomersRepository`. This test suite rel
 
 ## Exercise 2: Mongo DB
 
+[Spring Data/Mongo DB reference](http://static.springsource.org/spring-data/mongodb/docs/1.1.x/reference/html/)
+
 The toy application here models blog posts, written by authors and commented,
 as illustrated here:
 
@@ -53,6 +57,8 @@ Similarly, please fix the failing tests of `MongoTest`.
    1. Find all pictures of a post, via custom repository implementation `PostRepositoryImpl`. Your implementation will rely on `GridFsTemplate` to execute an instance of `org.springframework.data.mongodb.core.query.Query`. You can construct one out of criteria objects (e.g.: `org.springframework.data.mongodb.gridfs.GridFsCriteria.whereFilename` belonging in `post.getPictures()`).
 
 ## Exercise 3: Neo4J
+
+[Spring Data/Neo4J reference](http://static.springsource.org/spring-data/neo4j/docs/2.1.0.RELEASE/reference/html/)
 
 (Derived from [Michael Hunger's work](https://github.com/jexp/sdn-twitter-graph).)
 

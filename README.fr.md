@@ -18,6 +18,8 @@ Le seul point d'achoppement réside dans l'intégration de [QueryDSL](http://www
 
 ## Exercice 1: JPA
 
+[Documentation Spring Data/JPA](http://static.springsource.org/spring-data/data-jpa/docs/1.2.0.RELEASE/reference/html/)
+
 L'application enregistre des adresses de clients.
 Le domaine métier est modélisé comme suit :
 
@@ -37,6 +39,8 @@ Il ne vous reste qu'à compléter les tests de la classe `JpaTest` (pensez à mo
 
 ## Exercice 2: Mongo DB
 
+[Documentation Spring Data/Mongo DB](http://static.springsource.org/spring-data/mongodb/docs/1.1.x/reference/html/)
+
 Cette application modélise des posts de blog, lesquels sont rédigés par des auteurs (Author) et commentés (Comment).
 Le modèle est illustré ici :
 
@@ -54,6 +58,8 @@ Complétez la classe de test `MongoTest`.
 
 
 ## Exercice 3: Neo4J
+
+[Documentation Spring Data/Neo4J](http://static.springsource.org/spring-data/neo4j/docs/2.1.0.RELEASE/reference/html/)
 
 (Inspiré du [travail de Michael Hunger](https://github.com/jexp/sdn-twitter-graph).)
 
