@@ -6,6 +6,13 @@
  * [Maven](http://maven.apache.org/download.html)
  * [Mongo DB](http://www.mongodb.org/downloads)
 
+
+## Foreword
+
+All exercises consist in making their corresponding test suite pass.
+This will require some adaptation within the tests themselves as well as other related classes (Repository...).
+
+
 ## Exercise 1: JPA
 
 Basically, the application stores customer locations.
@@ -17,13 +24,13 @@ The domain is modeled as follows:
 ### TODO
 
 The required setup and data set are already provided.
-Please complete class `JpaTest`. This test suite relies on an embedded H2 database.
+Please complete classes `JpaTest` and `CustomersRepository`. This test suite relies on an embedded H2 database.
 
    1. Find a customer by its ID (lookup user with id 42)
    1. Find all customers
    1. Get paginated customer results (2nd page [page indices are 0-based], 5 people per page)
    1. Find customers with name compound predicate using explicit queries
-   1. Find by name and city, using QueryDSL
+   1. Find by name and city, using QueryDSL (CustomersRepository must extend `QueryDslPredicateExecutor`)
 
 ## Exercise 2: Mongo DB
 

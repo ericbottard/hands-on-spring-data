@@ -6,6 +6,11 @@
  * [Maven](http://maven.apache.org/download.html)
  * [Mongo DB](http://www.mongodb.org/downloads)
 
+## Préambule
+
+L'atelier se décompose en une suite d'exercices eux-mêmes composées d'une série de tests à faire passer au vert.
+Les tests sont à compléter, ainsi qu'éventuellement d'autres classes de l'exercice associé (Repository...).
+
 ## Exercice 1: JPA
 
 L'application enregistre des adresses de clients.
@@ -17,13 +22,13 @@ Le domaine métier est modélisé comme suit :
 ### TODO
 
 Le jeu de données ainsi que la configuration de l'application sont déjà en place.
-Il ne vous reste qu'à compléter les tests de la classe `JpaTest`. Celle-ci s'appuye sur une base de données H2 embarquée.
+Il ne vous reste qu'à compléter les tests de la classe `JpaTest` (pensez à modifier `CustomersRepository`). Celle-ci s'appuye sur une base de données H2 embarquée.
 
    1. Trouver un client par son ID (ID 42)
    1. Récupérer tous les clients
    1. Obtenir une liste paginée de clients (2nde page [les pages sont indexées à partir de 0], 5 clients par page)
    1. Obtenir les clients dont le nom suit un prédicat, défini via des "explicit queries"
-   1. Trouver des clients par nom et par ville, en s'appuyant sur QueryDSL
+   1. Trouver des clients par nom et par ville, en s'appuyant sur QueryDSL (CustomersRepository doit maintenant étendre `QueryDslPredicateExecutor`)
 
 ## Exercice 2: Mongo DB
 
