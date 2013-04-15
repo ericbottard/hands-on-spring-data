@@ -44,8 +44,6 @@ Similarly, please fix the failing tests of `MongoTest`.
    using `GridFsTemplate` class and static methods `org.springframework.data.mongodb.core.query.Query.query` and
    `org.springframework.data.mongodb.gridfs.GridFsCriteria.whereFilename`
 
-TODO CUSTOM IMPL CLASS DIAGRAM
-
 ## Exercise 3: Neo4J
 
 (Derived from [Michael Hunger's work](https://github.com/jexp/sdn-twitter-graph).)
