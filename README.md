@@ -6,12 +6,15 @@
  * [Maven](http://maven.apache.org/download.html)
  * [Mongo DB](http://www.mongodb.org/downloads)
 
-
 ## Foreword
 
 All exercises consist in making their corresponding test suite pass.
 This will require some adaptation within the tests themselves as well as other related classes (Repository...).
 
+This Hands On has been tested with Eclipse, but any other IDE should work. We recommend using the [SpringSource ToolSuite](http://www.springsource.org/sts) distro, which has Maven support and SpringData awareness built-in. You should import the project as an "Existing Maven project". 
+ 
+The main gotcha is having [QueryDSL](http://www.querydsl.com/) work in your IDE. Configuration files for eclipse are included, for other IDEs, your mileage may vary.
+ 
 
 ## Exercise 1: JPA
 
