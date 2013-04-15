@@ -15,12 +15,6 @@
 */
 package org.springframework.data.samples._02_mongo;
 
-import org.springframework.data.mongodb.core.geo.Circle;
-import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.samples._02_mongo.domain.Author;
-
-import java.util.List;
-
 public interface AuthorRepository /* TODO */ {
 
 }

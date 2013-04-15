@@ -19,7 +19,6 @@ import org.fest.assertions.core.Condition;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.neo4j.cypherdsl.grammar.Execute;
-import org.springframework.data.samples._03_neo4j.domain.Follows;
 import org.springframework.data.samples._03_neo4j.domain.Tweet;
 import org.springframework.data.samples._03_neo4j.domain.User;
 import org.springframework.test.context.ContextConfiguration;
@@ -32,7 +31,7 @@ import java.util.List;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 import static org.fest.assertions.api.Assertions.extractProperty;
-import static org.neo4j.cypherdsl.CypherQuery.*;
+import static org.neo4j.cypherdsl.CypherQuery.start;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(value = "classpath:applicationContext-neo4j.xml")

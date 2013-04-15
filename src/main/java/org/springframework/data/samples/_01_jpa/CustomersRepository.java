@@ -19,8 +19,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.samples._01_jpa.domain.Customer;
 
-import java.util.List;
-
 public interface CustomersRepository /* TODO */ {
 
     /**
