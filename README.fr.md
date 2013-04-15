@@ -11,6 +11,11 @@
 L'atelier se décompose en une suite d'exercices eux-mêmes composées d'une série de tests à faire passer au vert.
 Les tests sont à compléter, ainsi qu'éventuellement d'autres classes de l'exercice associé (Repository...).
 
+Cet atelier a été testé avec Eclipse, mais n'importe quel IDE fera l'affaire. Si vous souhaitez bénéficier d'un support top-moumoute de Maven et SpringData, nous vous recommandons chaudement d'utiliser [SpringSource ToolSuite](http://www.springsource.org/sts). Importez le projet en tant que "Projet Maven existant".
+ 
+Le seul point d'achoppement réside dans l'intégration de [QueryDSL](http://www.querydsl.com/) avec votre IDE. Les fichiers de configuration nécessaires à Eclipse sont versionnés (utilisateurs d'autres IDE: ces étapes de configuration peuvent varier).
+
+
 ## Exercice 1: JPA
 
 L'application enregistre des adresses de clients.
